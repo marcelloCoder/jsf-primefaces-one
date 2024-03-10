@@ -12,7 +12,18 @@
 		<maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 	</properties>
-	<dependencies><!-- https://mvnrepository.com/artifact/org.glassfish/javax.faces -->
+	<dependencies>
+		
+		<!-- https://mvnrepository.com/artifact/org.jboss.weld.servlet/weld-servlet -->
+		<dependency>
+		    <groupId>org.jboss.weld.servlet</groupId>
+		    <artifactId>weld-servlet</artifactId>
+		    <version>2.4.8.Final</version>
+		    <scope>compile</scope>
+		</dependency>
+
+		
+		<!-- https://mvnrepository.com/artifact/org.glassfish/javax.faces -->
 		<dependency>
 		    <groupId>org.glassfish</groupId>
 		    <artifactId>javax.faces</artifactId>
@@ -24,7 +35,7 @@
 		<dependency>
 	        <groupId>org.primefaces</groupId>
 	        <artifactId>primefaces</artifactId>
-	        <version>12.0.0</version>
+	        <version>6.0</version>
         	<scope>compile</scope>
     	</dependency>
 		
@@ -32,7 +43,7 @@
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
-		    <version>3.0.1</version>
+		    <version>3.1.0</version>
 		    <scope>provided</scope>
 		</dependency>
 		
@@ -48,7 +59,7 @@
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-core</artifactId>
-		    <version>5.2.3.Final</version>
+		    <version>5.2.4.Final</version>
 		    <scope>compile</scope>
 		</dependency>
 		
@@ -63,6 +74,10 @@
 		    <artifactId>postgresql</artifactId>
 		    <version>42.2.18</version>
 		</dependency>
+		
+		
+
+		
 		<dependency>
 		    <groupId>javax.faces</groupId>
 		    <artifactId>javax.faces-api</artifactId>

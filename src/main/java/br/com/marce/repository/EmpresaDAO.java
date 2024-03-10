@@ -3,6 +3,7 @@ package br.com.marce.repository;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -20,6 +21,7 @@ public class EmpresaDAO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Inject
 	private EntityManager manager;
 	
 	
@@ -33,6 +35,10 @@ public class EmpresaDAO implements Serializable{
 		query.setParameter("nomeFantasia", nome +"%");
 		return query.getResultList();
 	}
+	
+	public List<Empresa> todas() {
+        return manager.createQuery("from Empresa", Empresa.class).getResultList();
+   }
 	
 	public Empresa salvar(Empresa empresa) {
 		return manager.merge(empresa);

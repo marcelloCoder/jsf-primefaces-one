@@ -3,6 +3,7 @@ package br.com.marce.repository;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -22,7 +23,12 @@ public class RamoAtividadeDAO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Inject
 	private EntityManager manager;
+	
+	public RamoAtividade porID(Long id) {
+	    return manager.find(RamoAtividade.class, id);
+	}
 	
 	public List<RamoAtividade> pesquisar(String descricao){
 		CriteriaBuilder cB = manager.getCriteriaBuilder();
